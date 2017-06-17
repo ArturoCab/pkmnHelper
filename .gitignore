@@ -1,0 +1,7 @@
+/node_modules
+/python module/logs
+/python module/*.html
+/python module/*.code
+test*
+*.bat
+/public
