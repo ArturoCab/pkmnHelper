@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded());
 app.set('views','./src/views');
 app.set('view engine','ejs');
 
-var pokedexRouter= require('./src/routes/pokedexRoutes');
-var teamRouter= require('./src/routes/teamRoutes');
+var pokedexRouter = require('./src/routes/pokedexRoutes');
+//var teamRouter= require('./src/routes/teamRoutes');
 
 app.use('/pokedex',pokedexRouter);
-app.use('/myTeams',teamRouter);
+//app.use('/myTeams',teamRouter);1
 
 app.get('/',function(req, res) {
   console.log('main page');
