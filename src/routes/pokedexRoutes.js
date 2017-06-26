@@ -11,8 +11,6 @@ pokedexRouter.route("/")
         'messages':messages
         //'menuList':menuList
       });
-      console.log('pokedex');
-      console.log(messages);
     });
     //handle_database(req,res);
   });

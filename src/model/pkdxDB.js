@@ -10,18 +10,16 @@ var connection = mysql.createConnection({
   debug:false
 });
 
-var foo=function(){
-  var r=0.5;
-  console.log('inicio de la funcion foo');
-  connection.connect(function(error){
+connection.connect(function(error){
    if(error){
      throw error;
    }else{
      console.log('Conexion correcta');
    }
    console.log('outside getConnection');
-  });
-  var query=connection.query('select * from pkm_pokedex',[1],function(error,result,r){
+});
+
+var query=connection.query('select * from pkm_pokedex',[1],function(error,result,r){
    if(error){
      throw error;
    }else{

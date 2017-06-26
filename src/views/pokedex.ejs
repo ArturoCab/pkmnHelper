@@ -33,7 +33,65 @@
                 <tbody>
                     <% for(var i=0;i < messages.length;i++ ){%>
                       <tr>
-                        <% var dir="http://serebii.net/pokedex-sm/icon/"+messages[i].natdex+".png"; %>
+                        <% var dir="http://serebii.net/pokedex-sm/icon/"+messages[i].natdex;
+                        var form=messages[i].form;
+                        if(form!="Normal"){
+                          if(form.startsWith("Mega")){
+                            dir+="-m";
+                            if(form.endsWith("X"))
+                              dir+="x";
+                            if(form.endsWith("Y"))
+                              dir+="y";
+                          }
+                          if(form=="Alolan"){
+                            dir+="-a";
+                          }
+                          //tratando con wormadam
+                          switch(form){
+                            case "Trash Cloak":
+                              dir+="-t";
+                              break;
+                            case "Sandy Cloak":
+                              dir+="s";
+                              break;
+                          }
+
+                          //tratando con rotom
+                          switch(form){
+                            case "Mow Rotom":
+                              dir+="m";
+                              break;
+                            case "Frost Rotom":
+                              dir+="f";
+                              break;
+                            case "Heat Rotom":
+                              dir+="h";
+                              break;
+                            case "Fan Rotom":
+                              dir+="s";
+                              break;
+                            case "Wash Rotom":
+                              dir+="w";
+                              break;
+                          }
+                          //tratando con oricorio
+                          switch(form){
+                            case "Pom-Pom Style":
+                              dir+="-p";
+                              break;
+                            case "Pa'u Style":
+                              dir+="-pau";
+                              break;
+                            case "Sensu Style":
+                              dir+="-s";
+                              break;
+                          }
+                          if(form.startsWith("Zen"))
+                            dir+="d";
+                          if(form.endsWith("Unbound"))
+                            dir+="-u";
+                        }
+                        dir+=".png"; %>
                         <td><%=messages[i].natdex %></td>
                         <td><img src=<%=dir %>></td>
                         <td><%=messages[i].name%></td>

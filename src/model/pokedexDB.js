@@ -42,9 +42,6 @@ var pkdxDB=(function(){
 
 
   var getMessages = function(){
-    console.log("before sleep");
-    //yield sleep(2000);
-    console.log("after sleep");
     return new Promise(function(fulfill,reject){
         if(msgs.length>0){
           fulfill(msgs);
